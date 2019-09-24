@@ -3,6 +3,7 @@ packages:
   - python
   - python-dev
   - git
+  - ctags
 build_packages:
   - make
   - gcc
