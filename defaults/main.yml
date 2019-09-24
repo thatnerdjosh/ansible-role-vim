@@ -1,0 +1,10 @@
+---
+build_packages:
+  - python
+  - python-dev
+  - git
+  - make
+  - gcc
+  - libc-dev
+  - ncurses-dev
+primary_user: developer
