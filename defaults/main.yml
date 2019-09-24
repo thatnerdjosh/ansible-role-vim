@@ -1,8 +1,9 @@
 ---
-build_packages:
+packages:
   - python
   - python-dev
   - git
+build_packages:
   - make
   - gcc
   - libc-dev

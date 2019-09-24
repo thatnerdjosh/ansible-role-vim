@@ -5,6 +5,12 @@
     state: installed
   with_items: "{{ build_packages }}"
 
+- name: Install base packages
+  package:
+    name: "{{ item }}"
+    state: installed
+  with_items: "{{ packages }}"
+
 - name: Add primary user
   user:
     name: "{{ primary_user }}"
