@@ -5,6 +5,7 @@ packages:
   - git
   - ctags
   - vim
+  - gcc
 build_packages:
   - make
   - gcc
