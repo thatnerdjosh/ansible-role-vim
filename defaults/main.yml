@@ -4,6 +4,7 @@ packages:
   - python-dev
   - git
   - ctags
+  - vim
 build_packages:
   - make
   - gcc

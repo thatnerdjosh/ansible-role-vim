@@ -16,38 +16,6 @@
     name: "{{ primary_user }}"
     groups: "{{ primary_user }}"
 
-- name: Install vim
-  git:
-    repo: https://github.com/vim/vim
-    dest: /root/vim
-    version: master
-  register: vim_cloned
-
-- name: Check for vim
-  command: "/usr/local/bin/vim"  # noqa 301
-  become: true
-  become_user: "{{ primary_user }}"
-  register: vim_exists
-  ignore_errors: true
-
-- name: Compile vim
-  command: "./configure --disable-gui \
-    --disable-netbeans \
-    --enable-multibyte \
-    --enable-pythoninterp \
-    --with-features=big \
-    --with-python-config-dir=/usr/lib/python2.7/config"  # noqa 503
-  args:
-    chdir: /root/vim
-  when: vim_cloned.changed or vim_exists.rc == 2
-  register: vim_configure
-
-- name: Install vim
-  command: "make install"
-  args:
-    chdir: /root/vim
-  when: vim_configure is changed
-
 - name: Add vim autoload directory
   file:
     name: ~/.vim/autoload
