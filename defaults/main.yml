@@ -6,6 +6,7 @@ packages:
   - ctags
   - vim
   - gcc
+  - libc6-compat
 build_packages:
   - make
   - gcc
